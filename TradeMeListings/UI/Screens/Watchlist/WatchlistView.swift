@@ -11,5 +11,8 @@ import SwiftUI
 struct WatchlistView: View {
     var body: some View {
         Text("Watchlist View")
+            .font(.system(size: 12))
+            .fontWeight(.medium)
+            .foregroundColor(Color.textDark)
     }
 }

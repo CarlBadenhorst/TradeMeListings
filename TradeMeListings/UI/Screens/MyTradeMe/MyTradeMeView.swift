@@ -10,6 +10,10 @@ import SwiftUI
 
 struct MyTradeMeView: View {
     var body: some View {
-        Text("My TradeMe View")
+        Text("My Trade Me View")
+            .font(.system(size: 12))
+            .fontWeight(.medium)
+            .foregroundColor(Color.textDark)
+
     }
 }

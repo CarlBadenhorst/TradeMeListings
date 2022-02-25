@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     var listingsService: IListingsService!
@@ -16,19 +17,53 @@ struct ContentView: View {
         self.listingsService = ListingsService(listingsRepository: listingsRepository)
         self.latestListingsViewModel = LatestListingsViewModel(listingsService)
     }
-    
+    @State var navBarTitle: String = "Browse"
+    @State private var selection: Int = 1
+    @State private var showAlert: Bool = false
+    @State var alertText: String = ""
+
     var body: some View {
         NavigationView {
-            TabView {
+            TabView(selection: $selection){
                 LatestListingsView(vm: self.latestListingsViewModel)
-                    .tabItem { Label(NSLocalizedString("Discover", comment: "Discover"), image: "search")}
+                    .tabItem { Label(NSLocalizedString("Discover", comment: "Discover"), image: "search")}.tag(1)
                 WatchlistView()
-                    .tabItem { Label(NSLocalizedString("Watchlist", comment: "Watchlist"), image: "watchlist")}
+                    .tabItem { Label(NSLocalizedString("Watchlist", comment: "Watchlist"), image: "watchlist")}.tag(2)
                 MyTradeMeView()
-                    .tabItem { Label(NSLocalizedString("My Trade Me", comment: "My Trade Me"), image: "profile-16")}
+                    .tabItem { Label(NSLocalizedString("My Trade Me", comment: "My Trade Me"), image: "profile-16")}.tag(3)
+            }.onReceive(Just(selection)) { index in
+                switch selection {
+                case 1: navBarTitle = "Browse"
+                case 2: navBarTitle = "My Watchlist"
+                case 3: navBarTitle = "My Trade Me"
+                default:
+                    navBarTitle = "Browse"
+                }
             }.accentColor(Color.tasman)
-        }.navigationBarTitle("", displayMode: .inline) 
+            .navigationBarTitle(navBarTitle, displayMode: .inline)
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        alertText = "Search selected"
+                        showAlert.toggle()
+                    }, label: {
+                        Image("search")
+                    })
+                    Button(action: {
+                        alertText = "Cart selected"
+                        showAlert.toggle()
 
+                    }, label: {
+                        Image("cart")
+                    })
+                }
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text(alertText)
+                )
+            }
+        }
     }
 }
 

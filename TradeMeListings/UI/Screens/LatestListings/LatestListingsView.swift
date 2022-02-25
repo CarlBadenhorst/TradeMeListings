@@ -12,15 +12,20 @@ struct LatestListingsView: View {
     @ObservedObject var vm: LatestListingsViewModel
     
     var body: some View {
-        if self.vm.listings.count > 0 {
-            List {
-                ForEach(self.vm.listings, id: \.listingID) { listing in
-                    ListingRow(listing: listing).frame(height: 96)
+        VStack(spacing: 0) {
+            if self.vm.listings.count > 0 {
+                List {
+                    ForEach(self.vm.listings, id: \.listingID) { listing in
+                        ListingRow(listing: listing).frame(height: 96)
+                    }
                 }
+            } else {
+                Text(self.vm.resultText)
+                    .font(.system(size: 12))
+                    .fontWeight(.medium)
+                    .foregroundColor(Color.textDark)
             }
-        } else {
-            Text(self.vm.resultText)
-        }
+        }.navigationBarTitle("Browse", displayMode: .inline)
     }
 }
 
