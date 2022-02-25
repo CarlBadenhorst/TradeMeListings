@@ -25,7 +25,7 @@ struct LatestListingsView: View {
                     .fontWeight(.medium)
                     .foregroundColor(Color.textDark)
             }
-        }.navigationBarTitle("Browse", displayMode: .inline)
+        }
     }
 }
 

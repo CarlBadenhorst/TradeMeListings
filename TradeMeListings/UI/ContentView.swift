@@ -26,11 +26,11 @@ struct ContentView: View {
         NavigationView {
             TabView(selection: $selection){
                 LatestListingsView(vm: self.latestListingsViewModel)
-                    .tabItem { Label(NSLocalizedString("Discover", comment: "Discover"), image: "search")}.tag(1)
+                    .tabItem { Label("Discover", image: "search")}.tag(1)
                 WatchlistView()
-                    .tabItem { Label(NSLocalizedString("Watchlist", comment: "Watchlist"), image: "watchlist")}.tag(2)
+                    .tabItem { Label("Watchlist", image: "watchlist")}.tag(2)
                 MyTradeMeView()
-                    .tabItem { Label(NSLocalizedString("My Trade Me", comment: "My Trade Me"), image: "profile-16")}.tag(3)
+                    .tabItem { Label("My Trade Me", image: "profile-16")}.tag(3)
             }.onReceive(Just(selection)) { index in
                 switch selection {
                 case 1: navBarTitle = "Browse"

@@ -48,7 +48,7 @@ class LatestListingsViewModelTests: XCTestCase {
         let sut = LatestListingsViewModel(mockListingsService)
         sut.$resultText.sink { result in
             if result.count > 0 {
-                XCTAssertTrue(result.caseInsensitiveCompare(NSLocalizedString("Error Loading Listings", comment: "Error Loading Listings")) == .orderedSame)
+                XCTAssertTrue(result.caseInsensitiveCompare("Error Loading Listings") == .orderedSame)
                 expectation.fulfill()
             }
         }.store(in: &subscriptions)

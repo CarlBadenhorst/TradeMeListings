@@ -20,10 +20,10 @@ class LatestListingsViewModel: ObservableObject {
     }
     
     func loadAllListings() {
-        self.resultText = NSLocalizedString("Loading..", comment: "Loading..")
+        self.resultText = "Loading.."
         self.listingService.fetchListings().sink(receiveCompletion: { result in
             switch result {
-            case .failure( _): do { self.resultText = NSLocalizedString("Error Loading Listings", comment: "Error Loading Listings") }
+            case .failure( _): do { self.resultText = "Error Loading Listings" }
             case .finished: do {}
             }
         }, receiveValue: { response in

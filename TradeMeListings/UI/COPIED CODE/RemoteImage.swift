@@ -5,6 +5,11 @@
 //  Created by Carl Badenhorst on 2022/02/25.
 //
 
+
+// I wrote some of this code for a production environment
+// There's no quick way of loading an image in swiftui from a remote url for < ios 15
+
+
 import Foundation
 import SwiftUI
 import Combine
