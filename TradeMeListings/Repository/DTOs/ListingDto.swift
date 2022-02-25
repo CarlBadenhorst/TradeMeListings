@@ -9,7 +9,7 @@ import Foundation
 
 struct ListingDto: Codable {
     let totalCount: Int?
-    let list: [List]?
+    let list: [ListDto]?
 
     enum CodingKeys: String, CodingKey {
         case totalCount = "TotalCount"
@@ -17,7 +17,7 @@ struct ListingDto: Codable {
     }
 }
 
-struct List: Codable {
+struct ListDto: Codable {
     let listingID: Int
     let title: String?
     let startPrice: Double?
@@ -29,6 +29,7 @@ struct List: Codable {
     let isBuyNowOnly: Bool?
     let priceDisplay: String?
     let hasReserve: Bool?
+    let isReserveMet: Bool?
 
     enum CodingKeys: String, CodingKey {
         case listingID = "ListingId"
@@ -42,5 +43,6 @@ struct List: Codable {
         case isBuyNowOnly = "IsBuyNowOnly"
         case priceDisplay = "PriceDisplay"
         case hasReserve = "HasReserve"
+        case isReserveMet = "IsReserveMet"
     }
 }

@@ -17,7 +17,7 @@ class MockListingService: IListingsService {
         if fail {
             return Fail(error: NSError(domain: "", code: -10001, userInfo: nil)).eraseToAnyPublisher()
         }
-        return Just([Listing(listingID: "", imageUrl: "", location: "", description: "", isBuyNowOnly: true, hasBuyNow: true, buyNowPrice: "", currentPrice: "", startPrice: "")])
+        return Just([Listing(listingID: "", imageUrl: "", location: "", description: "", isBuyNowOnly: true, hasBuyNow: true, buyNowPrice: "", currentPrice: "", startPrice: "", isReserveMet: false)])
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }

@@ -32,6 +32,8 @@
 		69B63A4527C8A1B60059D299 /* MockListingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B63A4427C8A1B60059D299 /* MockListingsService.swift */; };
 		69B63A4727C8D03C0059D299 /* MockListingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B63A4627C8D03C0059D299 /* MockListingsRepository.swift */; };
 		69B63A4927C8D11E0059D299 /* LoadListingsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B63A4827C8D11E0059D299 /* LoadListingsServiceTests.swift */; };
+		69B63A4B27C90D990059D299 /* ListingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B63A4A27C90D990059D299 /* ListingRow.swift */; };
+		69B63A4E27C913160059D299 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B63A4D27C913160059D299 /* RemoteImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		69B63A4427C8A1B60059D299 /* MockListingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListingsService.swift; sourceTree = "<group>"; };
 		69B63A4627C8D03C0059D299 /* MockListingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockListingsRepository.swift; sourceTree = "<group>"; };
 		69B63A4827C8D11E0059D299 /* LoadListingsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadListingsServiceTests.swift; sourceTree = "<group>"; };
+		69B63A4A27C90D990059D299 /* ListingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingRow.swift; sourceTree = "<group>"; };
+		69B63A4D27C913160059D299 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,9 +152,10 @@
 		69B63A1827C7AD6D0059D299 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				69B63A4C27C912E10059D299 /* COPIED CODE */,
 				69B63A3827C7C7E70059D299 /* Theme */,
 				69B63A2D27C7B30A0059D299 /* UI entities */,
-				69B63A2E27C7C0A40059D299 /* TabViews */,
+				69B63A2E27C7C0A40059D299 /* Screens */,
 				69AC556127C666E3009CB6DA /* ContentView.swift */,
 			);
 			path = UI;
@@ -189,14 +194,14 @@
 			path = "UI entities";
 			sourceTree = "<group>";
 		};
-		69B63A2E27C7C0A40059D299 /* TabViews */ = {
+		69B63A2E27C7C0A40059D299 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				69B63A3127C7C0C80059D299 /* MyTradeMe */,
 				69B63A2F27C7C0AC0059D299 /* LatestListings */,
 				69B63A3027C7C0B70059D299 /* Watchlist */,
 			);
-			path = TabViews;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		69B63A2F27C7C0AC0059D299 /* LatestListings */ = {
@@ -204,6 +209,7 @@
 			children = (
 				69B63A3427C7C50C0059D299 /* LatestListingsView.swift */,
 				69B63A3E27C89FCF0059D299 /* LatestListingsViewModel.swift */,
+				69B63A4A27C90D990059D299 /* ListingRow.swift */,
 			);
 			path = LatestListings;
 			sourceTree = "<group>";
@@ -239,6 +245,14 @@
 				69B63A4627C8D03C0059D299 /* MockListingsRepository.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		69B63A4C27C912E10059D299 /* COPIED CODE */ = {
+			isa = PBXGroup;
+			children = (
+				69B63A4D27C913160059D299 /* RemoteImage.swift */,
+			);
+			path = "COPIED CODE";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +363,8 @@
 				69AC556227C666E3009CB6DA /* ContentView.swift in Sources */,
 				69B63A3A27C7C7F20059D299 /* Color.swift in Sources */,
 				69AC556027C666E3009CB6DA /* TradeMeListingsApp.swift in Sources */,
+				69B63A4B27C90D990059D299 /* ListingRow.swift in Sources */,
+				69B63A4E27C913160059D299 /* RemoteImage.swift in Sources */,
 				69B63A2127C7AEA30059D299 /* ListingsService.swift in Sources */,
 				69B63A2B27C7B3040059D299 /* Listing.swift in Sources */,
 				69B63A3327C7C5000059D299 /* MyTradeMeView.swift in Sources */,

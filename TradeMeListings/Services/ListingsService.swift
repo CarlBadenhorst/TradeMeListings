@@ -32,14 +32,15 @@ struct ListingsService: IListingsService {
                 for listingDto in loadedListingsDto {
                     listings.append(
                         Listing(listingID: String(listingDto.listingID),
-                                imageUrl: listingDto.pictureHref,
-                                location: listingDto.region,
-                                description: listingDto.title,
-                                isBuyNowOnly: listingDto.isBuyNowOnly,
-                                hasBuyNow: listingDto.hasBuyNow,
+                                imageUrl: listingDto.pictureHref ?? "",
+                                location: listingDto.region ?? "",
+                                description: listingDto.title ?? "",
+                                isBuyNowOnly: listingDto.isBuyNowOnly ?? false,
+                                hasBuyNow: listingDto.hasBuyNow ?? false,
                                 buyNowPrice: String(format: "%.2f", listingDto.buyNowPrice ?? 0.00),
-                                currentPrice: listingDto.priceDisplay,
-                                startPrice: String(format: "%.2f", listingDto.startPrice ?? 0.00))
+                                currentPrice: listingDto.priceDisplay ?? "",
+                                startPrice: String(format: "%.2f", listingDto.startPrice ?? 0.00),
+                                isReserveMet: listingDto.isReserveMet ?? false)
                     )
                 }
                 return AnyPublisher<Listings, Error>.init(Result<Listings, Error>.Publisher(listings))
