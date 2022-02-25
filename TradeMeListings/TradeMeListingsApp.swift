@@ -9,10 +9,6 @@ import SwiftUI
 
 @main
 struct TradeMeListingsApp: App {
-    init() {
-        
-    }
-    
     var body: some Scene {
         WindowGroup {
             ContentView()

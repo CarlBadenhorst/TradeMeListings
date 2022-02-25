@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    var listingsService: IListingsService!
+    var listingsRepository: IListingsRepository!
+    init() {
+        self.listingsRepository = ListingsRepository()
+        self.listingsService = ListingsService(listingsRepository: listingsRepository)
+    }
+    
     var body: some View {
         TabView {
-            LatestListingsView()
+            LatestListingsView(vm: .init(listingsService))
                 .tabItem { Label(NSLocalizedString("Discover", comment: "Discover"), image: "search")}
             WatchlistView()
                 .tabItem { Label(NSLocalizedString("Watchlist", comment: "Watchlist"), image: "watchlist")}

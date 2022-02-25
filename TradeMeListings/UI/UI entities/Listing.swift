@@ -14,8 +14,8 @@ struct Listing {
     let location: String?
     let description: String?
     let isBuyNowOnly: Bool?
-    let hasBuyNow: String?
+    let hasBuyNow: Bool?
     let buyNowPrice: String?
     let currentPrice: String?
-    let askingPrice: String?
+    let startPrice: String?
 }

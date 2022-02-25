@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct LatestListingsView: View {
+    var vm: LatestListingsViewModel!
+    
     var body: some View {
         Text("Listings View")
     }
