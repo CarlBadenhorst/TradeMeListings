@@ -10,13 +10,16 @@ import SwiftUI
 
 struct LatestListingsView: View {
     @ObservedObject var vm: LatestListingsViewModel
+    @State var showAlert: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
             if self.vm.listings.count > 0 {
                 List {
                     ForEach(self.vm.listings, id: \.listingID) { listing in
-                        ListingRow(listing: listing).frame(height: 96)
+                        ListingRow(listing: listing).frame(height: 96).onTapGesture {
+                            showAlert.toggle()
+                        }
                     }
                 }.listStyle(.plain)
             } else {
@@ -25,6 +28,8 @@ struct LatestListingsView: View {
                     .fontWeight(.medium)
                     .foregroundColor(Color.textDark)
             }
+        }.alert(isPresented: $showAlert) {
+            Alert(title: Text("Listing selected"))
         }
     }
 }
