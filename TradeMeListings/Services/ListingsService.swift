@@ -37,9 +37,9 @@ struct ListingsService: IListingsService {
                                 description: listingDto.title ?? "",
                                 isBuyNowOnly: listingDto.isBuyNowOnly ?? false,
                                 hasBuyNow: listingDto.hasBuyNow ?? false,
-                                buyNowPrice: String(format: "%.2f", listingDto.buyNowPrice ?? 0.00),
+                                buyNowPrice: String(format: "$%.2f", listingDto.buyNowPrice ?? 0.00),
                                 currentPrice: listingDto.priceDisplay ?? "",
-                                startPrice: String(format: "%.2f", listingDto.startPrice ?? 0.00),
+                                startPrice: String(format: "$%.2f", listingDto.startPrice ?? 0.00),
                                 isReserveMet: listingDto.isReserveMet ?? false)
                     )
                 }

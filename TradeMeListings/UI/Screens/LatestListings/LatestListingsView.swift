@@ -18,7 +18,7 @@ struct LatestListingsView: View {
                     ForEach(self.vm.listings, id: \.listingID) { listing in
                         ListingRow(listing: listing).frame(height: 96)
                     }
-                }
+                }.listStyle(.plain)
             } else {
                 Text(self.vm.resultText)
                     .font(.system(size: 12))
