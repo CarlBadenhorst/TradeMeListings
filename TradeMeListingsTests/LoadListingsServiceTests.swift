@@ -29,7 +29,7 @@ class LoadListingsServiceTests: XCTestCase {
         XCTAssertEqual("fetch Listings", self.mockListingsRepo.repoMethodCalled)
     }
     
-    func testLoadAllDataSuccessLoadsListings() {
+    func testFetchListingsSuccessLoadsListings() {
         var error: Error?
         let expectation = self.expectation(description: "ListingsDTO was received")
         var expectedReturn: Listings?
@@ -51,7 +51,7 @@ class LoadListingsServiceTests: XCTestCase {
         XCTAssertEqual(expectedReturn?.count, 1)
     }
 
-    func testLoadAllDataFailureDisplaysErrorMessage() {
+    func testFetchListingsFailureDisplaysErrorMessage() {
         var error: Error?
         let expectation = self.expectation(description: "Error was received")
         var expectedReturn: Listings?
