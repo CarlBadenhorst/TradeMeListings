@@ -15,7 +15,6 @@ protocol IListingsService {
 
 struct ListingsService: IListingsService {
     private var listingsRepository: IListingsRepository
-    let userWebRepositoryQueue = DispatchQueue(label: "bg_parse_queue")
 
     init(listingsRepository: IListingsRepository) {
         self.listingsRepository = listingsRepository

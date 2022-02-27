@@ -108,11 +108,11 @@
 		69AC555E27C666E3009CB6DA /* TradeMeListings */ = {
 			isa = PBXGroup;
 			children = (
+				69B63A1727C7AD4C0059D299 /* Assets */,
 				69AC555F27C666E3009CB6DA /* TradeMeListingsApp.swift */,
 				69B63A1F27C7AE7C0059D299 /* Repository */,
 				69B63A1E27C7AE740059D299 /* Services */,
 				69B63A1827C7AD6D0059D299 /* UI */,
-				69B63A1727C7AD4C0059D299 /* Assets */,
 				69AC556527C666E5009CB6DA /* Preview Content */,
 			);
 			path = TradeMeListings;
